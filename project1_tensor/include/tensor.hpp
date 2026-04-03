@@ -141,6 +141,8 @@ class Tensor {
     //   - const returns float  so you can read from a const Tensor.
     //
     // Throws std::out_of_range if any index exceeds its dimension.
+    float at(std::vector<size_t> idx) const;
+    float &at(std::vector<size_t> idx);
     float at(std::initializer_list<size_t> idx) const;
     float &at(std::initializer_list<size_t> idx);
 

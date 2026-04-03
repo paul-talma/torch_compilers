@@ -94,6 +94,16 @@ bool Tensor::is_contiguous() const {
     return true;
 }
 
+float Tensor::at(std::vector<size_t> idx) const {
+    size_t pos = flat_index(idx);
+    return storage_->data()[pos];
+}
+
+float &Tensor::at(std::vector<size_t> idx) {
+    size_t pos = flat_index(idx);
+    return storage_->data()[pos];
+}
+
 float Tensor::at(std::initializer_list<size_t> idx) const {
     size_t pos = flat_index(idx);
     return storage_->data()[pos];
