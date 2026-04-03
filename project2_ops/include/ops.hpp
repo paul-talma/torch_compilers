@@ -142,5 +142,10 @@ void matmul(const Tensor &a, const Tensor &b, Tensor &out);
 Tensor matmul(const Tensor &a, const Tensor &b);
 
 // helpers
+void generic_op(const Tensor &a, Tensor &out, float op(const float &)); // unary
+void generic_op(const Tensor &a, // binary
+                const Tensor &b,
+                Tensor &out,
+                float op(const float &, const float &));
 void broadcast_to(const Tensor &src, Tensor &out);
 } // namespace ops
